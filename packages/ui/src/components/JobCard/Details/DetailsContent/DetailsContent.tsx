@@ -14,13 +14,13 @@ interface DetailsContentProps {
 
 export const DetailsContent = ({
   selectedTab,
-  job: { stacktrace, data, returnValue, opts, failedReason },
+  job: { stacktrace, data, opts, failedReason },
   actions,
 }: DetailsContentProps) => {
   switch (selectedTab) {
     case 'Data':
       return (
-        <Highlight language="json">{JSON.stringify({ data, returnValue }, null, 2)}</Highlight>
+        <Highlight language="json">{JSON.stringify({ data }, null, 2)}</Highlight>
       );
     case 'Options':
       return <Highlight language="json">{JSON.stringify(opts, null, 2)}</Highlight>;
